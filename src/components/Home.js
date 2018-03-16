@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ContactUs from "./ContactUs";
+import placeholder from '../img/image-placeholder.svg'
+import FlippImage from '../img/flipp_large.png'
 
 class Home extends Component {
     render() {
@@ -46,8 +48,9 @@ class Home extends Component {
                     </div>
                 </div>
                 <ContactUs/>
+            </div>
         );
     }
 }
 
-export default Footer;
+export default Home;

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import placeholder from './image-placeholder.svg';
-import FlippImage from './flipp_large.png';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Content from "./components/Content";
 import './App.css';
 
 class App extends Component {
@@ -10,6 +9,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Navbar/>
+                <Content/>
                 <Footer/>
             </div>
         );

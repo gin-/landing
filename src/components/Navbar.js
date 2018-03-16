@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import App from "../App";
+import {NavLink} from "react-router-dom";
 
 export class Navbar extends Component {
     render() {
@@ -9,10 +9,14 @@ export class Navbar extends Component {
                     <div className="logo-text">Blackbird</div>
                 </a>
                     <nav role="navigation" className="nav-menu w-clearfix w-nav-menu">
-                        <a href="/" className="nav-link w-nav-link">HOME</a>
-                        <a href="/services" className="nav-link w-nav-link">services</a>
-                        <a href="/about" className="nav-link w-nav-link">About</a>
-                        <a href="/contact" className="nav-link w-nav-link">Contact</a>
+                        <NavLink exact to="/" className="nav-link w-nav-link"
+                              activeClassName="w--current">HOME</NavLink>
+                        <NavLink to="/services" className="nav-link w-nav-link"
+                              activeClassName="w--current">services</NavLink>
+                        <NavLink to="/about" className="nav-link w-nav-link"
+                              activeClassName="w--current">About</NavLink>
+                        <NavLink to="/contact" className="nav-link w-nav-link"
+                              activeClassName="w--current">Contact</NavLink>
                     </nav>
                     <div className="menu-button w-nav-button">
                         <div className="w-icon-nav-menu"/>
