@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class ContactUs extends Component {
+class Contacts extends Component {
     render() {
         return (
             <div className="section contact-us">
@@ -33,4 +33,4 @@ class ContactUs extends Component {
     }
 }
 
-export default ContactUs;
+export default Contacts;

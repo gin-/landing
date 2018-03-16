@@ -15,7 +15,7 @@ export class Navbar extends Component {
                               activeClassName="w--current">services</NavLink>
                         <NavLink to="/about" className="nav-link w-nav-link"
                               activeClassName="w--current">About</NavLink>
-                        <NavLink to="/contact" className="nav-link w-nav-link"
+                        <NavLink to="/contacts" className="nav-link w-nav-link"
                               activeClassName="w--current">Contact</NavLink>
                     </nav>
                     <div className="menu-button w-nav-button">

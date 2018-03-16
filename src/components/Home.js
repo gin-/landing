@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ContactUs from "./ContactUs";
+import ContactUs from "./Contacts";
 import placeholder from '../img/image-placeholder.svg'
 import FlippImage from '../img/flipp_large.png'
 

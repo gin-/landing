@@ -3,7 +3,7 @@ import {Route, Switch} from "react-router-dom";
 import Home from './Home';
 import About from "./About";
 import Services from "./Services";
-import ContactUs from "./ContactUs";
+import ContactUs from "./Contacts";
 
 class Content extends Component {
     render() {
@@ -11,7 +11,7 @@ class Content extends Component {
             <Switch>
                 <Route path='/about' component={About}/>
                 <Route path='/services' component={Services}/>
-                <Route path='/contact' component={ContactUs}/>
+                <Route path='/contacts' component={ContactUs}/>
                 <Route path='*' component={Home}/>
             </Switch>
         );
