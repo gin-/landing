@@ -1,13 +1,23 @@
 import React, {Component} from 'react';
+import API from 'aws-amplify';
 
 class Contacts extends Component {
+    submit(e) {
+        e.preventDefault();
+        const data = new FormData(e.target);
+
+        API.post('BlackbirdContactEmail', '/blackbird/contacts', data).then(response => {
+            console.log(response);
+        });
+    }
+
     render() {
         return (
             <div className="section contact-us">
                 <div className="w-container"><h1>Getting in touch is easy</h1>
                     <div className="subtitle">We'll get back to you ASAP. No worries.</div>
                     <div className="w-form">
-                        <form name="email-form" data-name="Email Form" className="w-clearfix">
+                        <form name="email-form" data-name="Email Form" className="w-clearfix" onSubmit={this.submit}>
                             <input type="text" name="first-name" data-name="First Name" placeholder="First Name"
                                    maxLength={256} required className="field left w-input"/>
                             <input type="text" name="last-name" data-name="Last Name" placeholder="Last Name"
