@@ -9,7 +9,7 @@ See the License for the specific language governing permissions and limitations 
 const express = require('express');
 const bodyParser = require('body-parser');
 const AWS = require('aws-sdk');
-const ses = new aws.SES({
+const ses = new AWS.SES({
     region: process.env.REGION
 });
 
@@ -21,14 +21,14 @@ const app = express();
 app.use(bodyParser.json());
 
 // Enable CORS for all methods
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next()
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next()
 });
 
 
-AWS.config.update({ region: process.env.REGION });
+AWS.config.update({region: process.env.REGION});
 
 // The DocumentClient class allows us to interact with DynamoDB using normal objects.
 // Documentation for the class is available here: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html
@@ -38,12 +38,13 @@ AWS.config.update({ region: process.env.REGION });
  * Send email
  *********************/
 
-app.post('/blackbird/contacts', function (req, res) {
+
+app.get('/', function (req, res) {
     console.log(req);
 
     const eParams = {
         Destination: {
-            ToAddresses: ["ahrushko@blackbird.com"]
+            ToAddresses: ["info@blackbird-lab.com"]
         },
         Message: {
             Body: {
@@ -55,7 +56,53 @@ app.post('/blackbird/contacts', function (req, res) {
                 Data: "Email Subject!!!"
             }
         },
-        Source: "ahrushko@blackbird.com"
+        Source: "info@blackbird-lab.com"
+    };
+
+    console.log('===SENDING EMAIL===');
+    const email = ses.sendEmail(eParams, function (err, data) {
+        if (err) console.log(err);
+        else {
+            console.log("===EMAIL SENT===");
+            console.log(data);
+
+
+            console.log("EMAIL CODE END");
+            console.log('EMAIL: ', email);
+            context.succeed(event);
+
+        }
+    });
+});
+
+app.post('/blackbird/contacts', function (req, res) {
+    console.log(req);
+
+    const eParams = {
+        Destination: {
+            ToAddresses: ["info@blackbird-lab.com"]
+        },
+        Message: {
+            Body: {
+                Html: {
+                    Data: `<h3>New message from Contact Us on blackbird-lab.com:</h3></br></hr></br><p>${req.description}</p>
+                            <p>Please reply to email: ${req.email}</p>`,
+                    Charset: "UTF8"
+                },
+                Text: {
+                    Data: `New message from Contact Us on blackbird-lab.com:\n${req.description}\nPlease reply to email: ${req.email}`,
+                    Charset: "UTF8"
+                }
+            },
+            Subject: {
+                Data: `Contact us message from ${req.name}`,
+                Charset: "UTF8"
+            }
+        },
+        ReplyToAddresses: [
+            req.email
+        ],
+        Source: "info@blackbird-lab.com"
     };
 
     console.log('===SENDING EMAIL===');
