@@ -6,7 +6,7 @@ class Services extends Component {
     render() {
         return (
             <div>
-                <div className="section black">
+                {/*<div className="section black">
                     <div className="w-container">
                         <div className="title"><h1>our services</h1>
                             <div className="subtitle">What started as a dorm room project exploded into an internet
@@ -154,7 +154,7 @@ class Services extends Component {
                             <Link to="/contacts"
                                   className="get-started-link simple">get support now</Link></div>
                     </div>
-                </div>
+                </div>*/}
             </div>
         );
     }

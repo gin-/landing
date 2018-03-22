@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import FacebookLogo from '../img/facebook-logo.svg';
 import LinkedinLogo from '../img/linkedin-logo.svg';
 import DouLogo from '../img/dou-logo.png';
+import Link from "react-router-dom/es/Link";
 
 class Footer extends Component {
     render() {
@@ -9,18 +10,18 @@ class Footer extends Component {
             <div className="section footer">
                 <div className="w-container">
                     <div className="w-row">
-                        <div className="footer-column w-col w-col-3"><h4>COMPANY</h4>
+                        {/*<div className="footer-column w-col w-col-3"><h4>COMPANY</h4>
                             <ul className="w-list-unstyled">
-                                <li><a href="/"
+                                <li><Link to="/"
                                        className="footer-link">Home</a></li>
-                                <li><a href="/about"
+                                <li><Link to="/about"
                                        className="footer-link">About Blackbird Labs</a></li>
-                                <li><a href="/services"
+                                <li><Link to="/services"
                                        className="footer-link">Services</a></li>
-                                <li><a href="/contact"
+                                <li><Link to="/contacts"
                                        className="footer-link">Contact</a></li>
                             </ul>
-                        </div>
+                        </div>*/}
                         <div className="footer-column hidden w-col w-col-3"><h4>Location</h4>
                             <ul className="w-list-unstyled">
                                 <li>
@@ -30,14 +31,14 @@ class Footer extends Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="footer-column hidden w-col w-col-3"><h4>Boring Stuff</h4>
+                        {/*<div className="footer-column hidden w-col w-col-3"><h4>Boring Stuff</h4>
                             <ul className="w-list-unstyled">
                                 <li><a href="#"
                                        className="footer-link">Privacy Policy</a></li>
                                 <li><a href="#"
                                        className="footer-link">Terms of Service</a></li>
                             </ul>
-                        </div>
+                        </div>*/}
                         <div className="footer-column w-col w-col-3">
                             <div className="w-form">
                                 <form name="email-form" data-name="Email Form" className="w-clearfix"><input

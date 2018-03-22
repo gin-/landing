@@ -5,7 +5,7 @@ export class Navbar extends Component {
     render() {
         return (
             <div data-collapse="medium" data-animation="default" data-duration={400} className="navbar w-nav">
-                <div className="w-container"><a href="/" className="brand-wrapper w-nav-brand">
+                {/*<div className="w-container"><a href="/" className="brand-wrapper w-nav-brand">
                     <div className="logo-text">Blackbird</div>
                 </a>
                     <nav role="navigation" className="nav-menu w-clearfix w-nav-menu">
@@ -21,7 +21,7 @@ export class Navbar extends Component {
                     <div className="menu-button w-nav-button">
                         <div className="w-icon-nav-menu"/>
                     </div>
-                </div>
+                </div>*/}
             </div>
         );
     }

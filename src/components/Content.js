@@ -9,9 +9,9 @@ class Content extends Component {
     render() {
         return (
             <Switch>
-                <Route path='/about' component={About}/>
+                {/*<Route path='/about' component={About}/>
                 <Route path='/services' component={Services}/>
-                <Route path='/contacts' component={ContactUs}/>
+                <Route path='/contacts' component={ContactUs}/>*/}
                 <Route path='*' component={Home}/>
             </Switch>
         );

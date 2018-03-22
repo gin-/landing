@@ -12,6 +12,7 @@ class Home extends Component {
                         className="subtitle">Company
                         description here</p></div>
                 </div>
+                {/*
                 <div className="section black">
                     <div className="w-container">
                         <div className="title"><h2>Our team</h2><p>The team of young and ambitious professionals at
@@ -47,6 +48,7 @@ class Home extends Component {
                         <div className="press-image-wrapper"/>
                     </div>
                 </div>
+                */}
                 <ContactUs/>
             </div>
         );

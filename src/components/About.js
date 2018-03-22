@@ -4,7 +4,7 @@ class About extends Component {
     render() {
         return (
             <div>
-                <div className="section black">
+               {/* <div className="section black">
                     <div className="w-container">
                         <div className="title"><h1>3 guys changing outsourcing</h1>
                             <div className="subtitle">What started as a dorm room project exploded into an internet
@@ -82,7 +82,7 @@ class About extends Component {
                         </div>
                     </div>
                 </div>
-
+*/}
             </div>
         );
     }
